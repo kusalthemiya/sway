@@ -60,14 +60,14 @@ sudo pacman -S --needed --noconfirm \
     mesa vulkan-intel intel-media-driver
 
 log "Installing tools"
-sudo pacman -S --needed --noconfirm 7zip qt5-wayland udisks2
+sudo pacman -S --needed --noconfirm 7zip qt5-wayland udisks2 udiskie zenity e2fsprogs
 
 # ---------------------------------------------------------------------------
 # 5. GUI apps
 # ---------------------------------------------------------------------------
 log "Installing GUI apps"
 sudo pacman -S --needed --noconfirm \
-    grim slurp mpv imv keepassxc firefox firefox-ublock-origin
+    grim slurp mpv imv keepassxc librewolf
 
 # ---------------------------------------------------------------------------
 # 6. Networking / sync
