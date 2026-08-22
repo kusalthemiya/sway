@@ -24,7 +24,7 @@ fi
 # 1. Base system update + build tools
 # ---------------------------------------------------------------------------
 log "Updating system"
-sudo pacman -Syyu --noconfirm
+sudo pacman -Syu --noconfirm
 
 # ---------------------------------------------------------------------------
 # 2. Shell setup (fish + starship)
@@ -56,7 +56,7 @@ sudo pacman -S --needed --noconfirm \
     bat btop fastfetch \
     imagemagick libheif poppler \
     dosfstools android-tools \
-    thermald tlp 
+    tlp mesa vulkan-radeon
     #intel-ucode mesa vulkan-intel intel-media-driver
 
 log "Installing tools"
@@ -84,8 +84,7 @@ sudo systemctl enable --now ufw
 # ---------------------------------------------------------------------------
 # 7. Enable power/thermal services
 # ---------------------------------------------------------------------------
-log "Enabling thermald and tlp"
-sudo systemctl enable --now thermald
+log "Enabling tlp"
 sudo systemctl enable --now tlp
 
 # ---------------------------------------------------------------------------
