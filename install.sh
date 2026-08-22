@@ -57,7 +57,6 @@ sudo pacman -S --needed --noconfirm \
     imagemagick libheif poppler \
     dosfstools android-tools \
     tlp mesa vulkan-radeon
-    #intel-ucode mesa vulkan-intel intel-media-driver
 
 log "Installing tools"
 sudo pacman -S --needed --noconfirm 7zip qt5-wayland udisks2 udiskie zenity e2fsprogs
