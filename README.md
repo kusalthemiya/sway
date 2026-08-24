@@ -48,7 +48,7 @@ Not run as root — the script sudos only where it needs to.
 | clipboard  | `wl-clipboard`, `cliphist` |
 | screenshots | `grim` + `slurp` |
 | media      | `mpv`, `imv` |
-| misc       | `keepassxc`, `firefox`, `syncthing`, `ufw`, `tlp`, `thermald` |
+| misc       | `keepassxc`, `librewolf`, `syncthing`, `ufw`, `tlp`  |
 
 ---
 
@@ -80,13 +80,13 @@ before it overwrites it.
 
 ## ⚙️ what the script does
 
-1. **update** — full system sync (`pacman -Syyu`)
+1. **update** — full system sync (`pacman -Syu`)
 2. **shell** — installs fish + starship, sets fish as default shell
 3. **sway stack** — sway, foot, fuzzel, waybar, neovim, yazi, mako, clipboard tools, lock/idle
 4. **cli utilities** — bat, btop, fastfetch, imagemagick, thermald, tlp, intel graphics drivers
-5. **gui apps** — grim, slurp, mpv, imv, keepassxc, firefox + uBlock Origin
+5. **gui apps** — grim, slurp, mpv, imv, keepassxc, librewolf + uBlock Origin
 6. **networking** — syncthing (enabled as a user service) + ufw
-7. **power** — enables thermald + tlp for thermal/battery management
+7. **power** — enables tlp for thermal/battery management
 8. **dotfiles** — copies every config folder + `starship.toml` + `wallpaper/` into `~/.config`
 9. **cleanup** — removes orphaned packages and package cache
 
