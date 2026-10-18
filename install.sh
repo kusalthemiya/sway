@@ -133,7 +133,35 @@ if [[ -d "$SCRIPT_DIR/wallpaper" ]]; then
 fi
 
 # ---------------------------------------------------------------------------
-# 9. Cleanup orphaned packages + cache
+# 9. Install yay (AUR helper)
+# ---------------------------------------------------------------------------
+log "Installing yay from the AUR"
+
+if ! command -v yay >/dev/null 2>&1; then
+    yay_build_dir="$(mktemp -d)"
+
+    git clone https://aur.archlinux.org/yay.git "$yay_build_dir/yay"
+    (
+        cd "$yay_build_dir/yay"
+        makepkg -si --noconfirm
+    )
+
+    rm -rf "$yay_build_dir"
+else
+    echo "yay is already installed."
+fi
+
+
+# ---------------------------------------------------------------------------
+# 10.Install AUR apps
+# ---------------------------------------------------------------------------
+log "Installing AUR applications"
+
+yay -S --needed --noconfirm \
+    brave-origin-bin
+
+# ---------------------------------------------------------------------------
+# 11. Cleanup orphaned packages + cache
 # ---------------------------------------------------------------------------
 log "Cleaning up orphans and package cache"
 orphans=$(pacman -Qtdq || true)
@@ -144,7 +172,7 @@ else
 fi
 
 # ---------------------------------------------------------------------------
-# 10. Finishing
+# 12. Finishing
 # ---------------------------------------------------------------------------
 log "Setup complete!"
 echo "Reboot recommended: sudo reboot"
