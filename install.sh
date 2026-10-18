@@ -53,10 +53,14 @@ sudo pacman -S --needed --noconfirm \
 # ---------------------------------------------------------------------------
 log "Installing CLI utilities"
 sudo pacman -S --needed --noconfirm \
+    base-devel git \
+    linux-firmware amd-ucode \
+    mesa vulkan-radeon \
+    libva-mesa-driver mesa-vdpau \
     bat btop fastfetch \
     imagemagick libheif poppler \
     dosfstools android-tools \
-    tlp mesa vulkan-radeon
+    tlp libinput
 
 log "Installing tools"
 sudo pacman -S --needed --noconfirm 7zip qt5-wayland udisks2 udiskie zenity e2fsprogs
@@ -66,7 +70,7 @@ sudo pacman -S --needed --noconfirm 7zip qt5-wayland udisks2 udiskie zenity e2fs
 # ---------------------------------------------------------------------------
 log "Installing GUI apps"
 sudo pacman -S --needed --noconfirm \
-    grim slurp mpv imv keepassxc librewolf
+    grim slurp mpv imv keepassxc
 
 # ---------------------------------------------------------------------------
 # 6. Networking / sync
