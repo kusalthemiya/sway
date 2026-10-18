@@ -56,7 +56,7 @@ sudo pacman -S --needed --noconfirm \
     base-devel git \
     linux-firmware amd-ucode \
     mesa vulkan-radeon \
-    libva-mesa-driver mesa-vdpau \
+    libva-mesa-driver \
     bat btop fastfetch \
     imagemagick libheif poppler \
     dosfstools android-tools \
