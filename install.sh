@@ -60,7 +60,7 @@ sudo pacman -S --needed --noconfirm \
     bat btop fastfetch \
     imagemagick libheif poppler \
     dosfstools android-tools \
-    tlp libinput
+    tlp
 
 log "Installing tools"
 sudo pacman -S --needed --noconfirm 7zip qt5-wayland udisks2 udiskie zenity e2fsprogs
