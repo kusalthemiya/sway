@@ -133,31 +133,31 @@ if [[ -d "$SCRIPT_DIR/wallpaper" ]]; then
 fi
 
 # ---------------------------------------------------------------------------
-# 9. Install yay (AUR helper)
+# 9. Install paru (AUR helper)
 # ---------------------------------------------------------------------------
-log "Installing yay from the AUR"
+log "Installing paru from the AUR"
 
-if ! command -v yay >/dev/null 2>&1; then
-    yay_build_dir="$(mktemp -d)"
+if ! command -v paru >/dev/null 2>&1; then
+    paru_build_dir="$(mktemp -d)"
 
-    git clone https://aur.archlinux.org/yay.git "$yay_build_dir/yay"
+    git clone https://aur.archlinux.org/paru.git "$paru_build_dir/paru"
     (
-        cd "$yay_build_dir/yay"
+        cd "$paru_build_dir"
         makepkg -si --noconfirm
     )
 
-    rm -rf "$yay_build_dir"
+    rm -rf "$paru_build_dir"
 else
-    echo "yay is already installed."
+    echo "paru is already installed."
 fi
 
 
 # ---------------------------------------------------------------------------
-# 10.Install AUR apps
+# 10. Install AUR apps
 # ---------------------------------------------------------------------------
 log "Installing AUR applications"
 
-yay -S --needed --noconfirm \
+paru -S --needed --noconfirm \
     brave-origin-bin
 
 # ---------------------------------------------------------------------------
